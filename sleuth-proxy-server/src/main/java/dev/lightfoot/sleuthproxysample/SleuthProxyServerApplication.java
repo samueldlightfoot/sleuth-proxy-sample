@@ -1,13 +1,13 @@
-package lightfoot.dev.sleuthproxysample;
+package dev.lightfoot.sleuthproxysample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SleuthProxySampleApplication {
+public class SleuthProxyServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SleuthProxySampleApplication.class, args);
+		SpringApplication.run(SleuthProxyServerApplication.class, args);
 	}
 
 }
