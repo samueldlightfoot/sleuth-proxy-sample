@@ -36,11 +36,11 @@ public class ClientController {
 	public Mono<Boolean> callServerProxy() {
 		log.debug("Received request to call server (proxy)");
 		return callClient.call()
+			.doOnNext(i -> {
+				// Results show this will have a new trace id, but still not re-used
+				callClient.call().subscribe();
+			})
 			.then(callClient.call());
-//			.doOnNext(i -> {
-//				// Results show this will have a new trace id, but still not re-used
-//				callClient.call().subscribe();
-//			});
 	}
 
 }
